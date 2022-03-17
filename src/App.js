@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MovieContainer from './components/MovieContainer'
+import AddForm from './components/AddForm'
+import MovieStats from './components/MovieStats'
 
-function App() {
+const App = (props) => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '1%' }}>
+      <h1 className='mb-5 mt-3'>My Big Movie List</h1>
+      <div className='row'>
+        <div className='col-7'>
+          <MovieContainer />
+        </div>
+        <div className='col-5 container'>
+          <div className='col-8 shadow-lg p-4 bg-body rounded'>
+            <AddForm />
+          </div>
+          <div className='col-7 mt-5 shadow-lg p-5 bg-body rounded'>
+            <MovieStats />
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
